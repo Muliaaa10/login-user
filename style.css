@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form{
+    border: 3px solid #f1f1f1;
+}
+
+img.avatar{
+    width: 40%;
+    border-radius: 50%;
+}
+
+.setgambar{
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+input{
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 8px 0;
+
+}
+
+button{
+    width: 100%;
+    background-color: #04aa60;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    margin: 8px 0;
+}
+
+button :hover{
+    opacity: 0.8;
+}
+
+.tombolcancle{
+    width: auto;
+    background-color: red;
+    padding: 10px 18px;
+}
+
+.container{
+    padding: 16px;
+}
+
+span.psw{
+    float: right;
+    padding-top: 16px;
+}

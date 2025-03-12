@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Registrasi</title>
+    <!-- CSS Area embedded -->
+     <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        input{
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 20px 0;
+            display: inline-block;
+            border: none;
+            background-color: #f1f1f1;
+        } 
+
+        input{
+            background-color: #ddd;
+            outline: none;
+        }
+
+        hr{
+            border: 1px solid #f1f1f1;
+        }
+
+        button{
+            background-color: #04aa60;
+            color: white;
+            padding: 14px 20px;
+            cursor: pointer; 
+            width: 100%;
+            opacity: 0.9;
+            margin: 8px 0;
+        }
+
+        button:hover{
+            opacity: 1;
+        }        
+
+        .tombolbatal{
+            padding: 14px 20px;
+            background-color: #f4433f;
+        }
+
+        .tombolbatal, .tombolsingup{
+            float: left;
+            width: 50%;
+        }
+        .container{
+            padding: 16px;
+        }
+        .setbutton::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        @media screen and (max-width: 30px) {
+            .tombolbatal,.tombolsingup{
+                width: 100%;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <form action="" style="border: 1px solid #ccc;">
+        <div class="container">
+        <h1>Form Registrasi User</h1>
+        <p>Silahkan Input Data Dibawah Ini</p>
+        <hr>
+        <label for="E-mail">E-mail</label>
+        <input type="email" name="email" id="" placeholder="ketikan email aktif" required>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="" placeholder="ketikan password" required>
+        <label for="ulangipassword">Ulangi password</label>
+        <input type="password" name="ulangipassword" id="" placeholder="ketikan password" required>
+        
+        <label>
+        <input type="checkbox" checked="checked" name="remember" id="" style="margin-bottom: 15px;">Remember me</label>
+
+        <P style="color: dodgerblue;">
+            Dengan mengisikan form registrasi, maka anda setuju dengan kebijakan privasi </P>
+
+        <div class="setbutton">
+        <button type="reset" class="tombolbatal">Batal</button>
+        <button type="submit" class="tombolsingup">Sing-Up</button>
+        <button type="button"    onclick="window.location.href='index.html'">Log-in</button>    
+            </div>
+        
+        </div>
+    </form>
+</body>
+</html>

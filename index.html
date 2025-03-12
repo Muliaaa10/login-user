@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login From</title>
+    <!-- eksternal link CSS -->
+     <link rel="stylesheet" href="style.css"> 
+     <script src="https://www.github.com/firebasejs/9.6.1/firebase-app.js"></script>
+     <script src="https://www.github.com/firebasejs/9.6.1/firebase-auth.js"></script>
+     <script>
+         const firebaseConfig = {
+             apiKey: "YOUR_API_KEY",
+             authDomain: "YOUR_AUTH_DOMAIN",
+             projectId: "YOUR_PROJECT_ID",
+             storageBucket: "YOUR_STORAGE_BUCKET",
+             messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+             appId: "YOUR_APP_ID"
+         };
+ 
+         firebase.initializeApp(firebaseConfig);
+         const auth = firebase.auth();
+ 
+         function signUp() {
+             const email = document.getElementById('email').value;
+             const password = document.getElementById('password').value;
+             auth.createUserWithEmailAndPassword(email, password)
+                 .then(userCredential => {
+                     alert('Sign Up Successful!');
+                 })
+                 .catch(error => {
+                     alert(error.message);
+                 });
+         }
+ 
+         function login() {
+             const email = document.getElementById('email').value;
+             const password = document.getElementById('password').value;
+             auth.signInWithEmailAndPassword(email, password)
+                 .then(userCredential => {
+                     alert('Login Successful!');
+                     document.getElementById('auth-container').style.display = 'none';
+                     document.getElementById('content').style.display = 'block';
+                 })
+                 .catch(error => {
+                     alert(error.message);
+                 });
+         }
+ 
+         function logout() {
+             auth.signOut().then(() => {
+                 alert('Logged out');
+                 document.getElementById('auth-container').style.display = 'block';
+                 document.getElementById('content').style.display = 'none';
+             });
+         }
+     </script>
+</head>
+<body>
+    <script src="https://www.github.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.github.com/firebasejs/9.6.1/firebase-auth.js"></script>
+<script src="script.js"></script>
+    <h2>Login User</h2>
+    <!--Buat Elemen Form-->
+    <form action="">
+        <div>
+            <div class="setgambar">
+            <img src="avatar.jpg" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+    <!--Buat Elemen Input-->
+        <label for=""><b>Username</b></label>
+        <input type="text" name="Username"
+        id="" placeholder="ketikan username anda" required>
+        <label for=""><b>Password</b></label>
+        <input type="password" name="password"
+        id="" placeholder="ketikan password" required>
+    <!-- elemen button -->
+         <button type="submit" onclick="login()">
+            Login
+         </button>
+         <button type="button" onclick="signUp()" onclick="window.location.href='singup.html'">Sing-Up</button>
+         <label for="">
+            <input type="checkbox" name="remember" id="">Remember me
+         </label>
+        </div>
+
+        <div class="container" style="background-color: #f1f1f1;">
+         <button type="reset" class="tombolcancle">Cencle</button>
+         <span class="psw">Forget <a href="">Password?</a></span>
+        </div>        
+        </form>
+</body>
+</html>
